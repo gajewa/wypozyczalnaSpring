@@ -8,21 +8,103 @@ import java.util.Date;
 @Document(collection = "cars")
 public class Car {
 
+
     @Id
-    public String id;
+    private String id;
 
-    public String make;
-    public String model;
-    public String body;
-    public String engine;
-    public int totalRentals;
-    public int seats;
-    public int price;
-    public double totalIncome;
-    public Date updated_date;
+    private String make;
+    private String model;
+    private String body;
+    private String engine;
 
-    public Car(String id, String make, String model, String body, String engine, int totalRentals, int seats, int price, double totalIncome, Date updated_date) {
-        this.id = id;
+    public String getId() {
+        return id;
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    public String getEngine() {
+        return engine;
+    }
+
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+
+    public int getTotalRentals() {
+        return totalRentals;
+    }
+
+    public void setTotalRentals(int totalRentals) {
+        this.totalRentals = totalRentals;
+    }
+
+    public int getSeats() {
+        return seats;
+    }
+
+    public void setSeats(int seats) {
+        this.seats = seats;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public double getTotalIncome() {
+        return totalIncome;
+    }
+
+    public void setTotalIncome(double totalIncome) {
+        this.totalIncome = totalIncome;
+    }
+
+    public Date getUpdated_date() {
+        return updated_date;
+    }
+
+    public void setUpdated_date(Date updated_date) {
+        this.updated_date = updated_date;
+    }
+
+    private int totalRentals;
+    private int seats;
+    private int price;
+    private double totalIncome;
+    private Date updated_date;
+
+
+    public Car(){}
+
+    public Car(String make, String model, String body, String engine,
+               int totalRentals, int seats, int price, double totalIncome,
+               Date updated_date) {
         this.make = make;
         this.model = model;
         this.body = body;
@@ -33,6 +115,14 @@ public class Car {
         this.totalIncome = totalIncome;
         this.updated_date = updated_date;
     }
+
+    /*public Car(String make, String model, String body) {
+        this.make = make;
+        this.model = model;
+        this.body = body;
+    }*/
+
+
 
     @Override
     public String toString() {
