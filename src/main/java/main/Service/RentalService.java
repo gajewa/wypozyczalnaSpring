@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class RentalService {
@@ -34,6 +35,18 @@ public class RentalService {
         for(Rental element : unpopulated) {
            element.setCar(carRepository.findById(element.getCarId()));
            element.setUser(userRepository.findById(element.getUserId()));
+        }
+
+        return unpopulated;
+    }
+
+    public Collection<Rental> getActiveRentals(){
+        List<Rental> unpopulated = this.rentalRepository.findAll().stream()
+                .filter( rent -> rent.getStatus().equals("Aktywne")).collect(Collectors.toList());
+
+        for(Rental element : unpopulated) {
+            element.setCar(carRepository.findById(element.getCarId()));
+            element.setUser(userRepository.findById(element.getUserId()));
         }
 
         return unpopulated;

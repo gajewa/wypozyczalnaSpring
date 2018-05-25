@@ -25,4 +25,9 @@ public class RentalController {
     public Collection<Rental> getPopulatedRentals(){
         return this.rentalService.getPopulatedRentals();
     }
+
+    @RequestMapping(value = "/active", method = RequestMethod.GET)
+    public Collection<Rental> getActiveRentals(){
+        return this.rentalService.getActiveRentals();
+    }
 }
