@@ -3,6 +3,7 @@ package main.Controller;
 import main.Entity.Rental;
 import main.Service.RentalService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,5 +30,15 @@ public class RentalController {
     @RequestMapping(value = "/active", method = RequestMethod.GET)
     public Collection<Rental> getActiveRentals(){
         return this.rentalService.getActiveRentals();
+    }
+
+    @RequestMapping(value = "/canceled", method = RequestMethod.GET)
+    public Collection<Rental> getCanceledRentals(){
+        return this.rentalService.getCanceledRentals();
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public void addNewRental(@RequestBody Rental rental){
+        this.rentalService.addNewRental(rental);
     }
 }
