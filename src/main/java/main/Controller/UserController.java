@@ -36,7 +36,17 @@ public class UserController {
         this.userService.addUser(user);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public void getUserByIdNumber(@RequestBody User user)
+    @RequestMapping(value = "/idNumber", method = RequestMethod.POST)
+    public User getUserByIdNumber(@RequestBody String idNumber){
+        return this.userService.getUserByIdNumber(idNumber.substring(16, 26));
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public void updateUser(@RequestBody User user){
+        this.userService.updateUser(user);
+    }
+
+
+
 
 }

@@ -35,7 +35,6 @@ public class UserService {
 
     public Collection<User> getRanking(){
         List<User> temp = new ArrayList<User>(this.userRepo.findAll());
-
         Collections.sort(temp, (o1, o2) ->  o2.getMoneySpent().intValue() - o1.getMoneySpent().intValue());
 
         return temp.subList(0, 3);
