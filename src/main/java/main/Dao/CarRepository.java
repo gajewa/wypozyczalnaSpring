@@ -11,5 +11,4 @@ public interface CarRepository extends MongoRepository<Car, String> {
 
     public Optional<Car> findById(String id);
     public List<Car> findByMake(String make);
-//    public void save();
 }

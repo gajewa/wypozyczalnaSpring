@@ -116,18 +116,12 @@ public class Car {
         this.updated_date = updated_date;
     }
 
-    /*public Car(String make, String model, String body) {
-        this.make = make;
-        this.model = model;
-        this.body = body;
-    }*/
-
-
 
     @Override
     public String toString() {
         return String.format(
-                "Car[id=%s, make='%s', model='%s', body='%s', engine='%s', totalRentals='%s', seats='%s', price='%s', totalIncome='%s', updated_date='%s']",
+                "Car[id='%s', make='%s', model='%s', body='%s', engine='%s', totalRentals='%s', " +
+                        "seats='%s', price='%s', totalIncome='%s', updated_date='%s']",
                 id, make, model, body, engine, totalRentals, seats, price, totalIncome, updated_date);
     }
 
